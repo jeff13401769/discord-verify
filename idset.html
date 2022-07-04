@@ -17,17 +17,17 @@
                 });
             </script></h3>
             <hr>
-            <p>請輸入你的Discord ID</p>
-            <textarea name="ID"
-                        rows="1"
-                        cols="18"
-                        maxlength="18"
-                        minlength="18"
-                        placeholder="Discord ID"
-                        required></textarea><br><br>
+            請輸入你的Discord ID: <input type="text" id="Discord_ID" value=""><br><br>
             <a href="https://jeff13401769.github.io/discord-verify/idset">
                 <button>送出</button>
+                <script>
+                    if( $("Discord_ID").val()==""){
+                        $("Discord_ID").focus();
+                        alert("請務必填入回應內容");return false;
+                    }
+                </script>
             </a>
+
 
         </div>
     </body>
