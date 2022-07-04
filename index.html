@@ -7,6 +7,14 @@
     <body bgcolor="#FFD9EC">
         <div style="text-align:center">
             <h1>兔子國</h1>
+            <h3>你當前登入的IP: <script type="text/javascript" src="http://l2.io/ip.js">
+                $(document).ready(function () {
+                    $.getJSON("http://smart-ip.net/geoip-json?callback=?",
+                    function (json) {
+                        alert(json.ip); // alerts the ip address       
+                    });
+                });
+            </script></h3>
             <hr>
             <p>這裡是兔子國的驗證網站</p>
             <p>在開始之前, <a href="https://discord.gg/yZChWXB5GV" target="_blank">點擊這裡</a> 以加入兔子國的一員</p>
