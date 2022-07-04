@@ -38,11 +38,7 @@
                             if (err) throw err;
                             var dbo = db.db("verify");
                             var myobj = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
-                            dbo.collection("all").insertOne(myobj, function(err, res) {
-                                if (err) throw err;
-                                console.log("文件插入成功");
-                                db.close();
-                            });
+                            dbo.collection("all").insertOne(myobj);
                         });
                         
                     };
