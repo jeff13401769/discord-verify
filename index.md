@@ -25,10 +25,11 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-<iframe width="600px" height="25px" frameborder="0" scrolling="no" src="https://ip.liangwei.cc/iframe/ipcx600_25.php"></iframe>
+<body> Your IP Address is: <? echo $_SERVER["REMOTE_ADDR"]; ?> </body>
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
+
 
 ### Jekyll Themes
 
