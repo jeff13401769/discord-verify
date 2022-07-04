@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <title>兔子國驗證網站</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script type="text/javascript" src="http://www.w3school.com.cn/jquery/jquery.js"></script>
         </head>
     <body bgcolor="#FFD9EC">
@@ -16,18 +17,39 @@
                     });
                 });
             </script></h3>
+            
             <hr>
             請輸入你的Discord ID: <input type="text" id="Discord_ID" value=""><br><br>
-            <a href="https://jeff13401769.github.io/discord-verify/idset">
-                <button>送出</button>
-                <script>
-                    if( $("Discord_ID").val()==""){
-                        $("Discord_ID").focus();
-                        alert("請務必填入回應內容");return false;
-                    }
-                </script>
-            </a>
+            <button onclick="enter_id()">送出</button>
+            <script>
+                function enter_id() {
+                    var id = document.getElementById("Discord_ID").value;
+                    if(confirm("你確定要遞交申請嗎? 每個IP每小時只能遞交一次申請!")){
 
+                        var url = 'https://www.google.com.tw/';
+                        window.open(url, '_self');
+                        var MongoClient = require('mongodb').MongoClient;
+                        var url = "mongodb+srv://jade_rabbit1124:Qwer1234762@cluster0.d6s5t.mongodb.net/?retryWrites=true&w=majority&connect=false";
+                        var user_ip = json.ip;
+                        var user_id = id;
+                        var seconds = new Date(year, month, day, hours, minutes, seconds, 0).getTime() / 1000;
+                        var time_stamp = seconds
+                        MongoClient.connect(url, function(err, db) {
+                            if (err) throw err;
+                            var dbo = db.db("verify");
+                            var myobj = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
+                            dbo.collection("all").insertOne(myobj, function(err, res) {
+                                if (err) throw err;
+                                console.log("文件插入成功");
+                                db.close();
+                            });
+                        });
+                        
+                    };
+                }
+
+
+            </script>
 
         </div>
     </body>
