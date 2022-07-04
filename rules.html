@@ -12,25 +12,9 @@
             <p>在繼續下一步之前, 請確保你已經觀看完規則</p>
             <p>你也可以點擊<a href="https://bit.ly/3xhLE1R" target="_blank">這裡</a>來觀看完整視窗</p>
             <iframe src="https://onedrive.live.com/embed?cid=6D2A0F0BA08FF1BB&resid=6D2A0F0BA08FF1BB%2136067&authkey=AF2A7UG4_BFPPxc&em=2" width="1000" height="600" frameborder="0" scrolling="no"></iframe><br><br><br>
-            <div>
-                <input type="submit"  id="submit1" value="確認紐" />
-            </div>
-            <script>
-                var timerc = 10; //全局时间变量（秒数）
-                function add() {
-                    if (timerc > 0) {
-                        $("#submit1").val('等待' + Number(parseInt(timerc % 60 / 10)).toString() + (timerc % 10));
-                        $("#submit1").attr("disabled", true);
-                        timerc--;
-                        setTimeout("add()", 1000); //设置1000毫秒以后执行一次本函数
-                    }
-                    else {
-                        $("#submit1").attr("disabled", false);
-                        $("#submit1").val('確認已經看完規定,按下按鈕後視同已將規定看畢,事後不得已"不清楚"為由規避');
-                    };
-                };
-                add(); //首次调用add函数
-            </script>
+            <a href="https://jeff13401769.github.io/discord-verify/rules">
+                <button>確認已經看完規定,按下按鈕後視同已將規定看畢,事後不得已"不清楚"為由規避</button>
+            </a>
             
             
 
