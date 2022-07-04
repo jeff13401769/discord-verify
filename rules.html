@@ -8,6 +8,14 @@
     <body bgcolor="#FFD9EC">
         <div style="text-align:center">
             <h1>兔子國規章</h1>
+            <h3>你當前登入的IP: <script type="text/javascript" src="http://l2.io/ip.js">
+                $(document).ready(function () {
+                    $.getJSON("http://smart-ip.net/geoip-json?callback=?",
+                    function (json) {
+                        alert(json.ip); // alerts the ip address       
+                    });
+                });
+            </script></h3>
             <hr>
             <p>在繼續下一步之前, 請確保你已經觀看完規則</p>
             <p>你也可以點擊<a href="https://bit.ly/3xhLE1R" target="_blank">這裡</a>來觀看完整視窗</p>
@@ -15,8 +23,6 @@
             <a href="https://jeff13401769.github.io/discord-verify/rules">
                 <button>確認已經看完規定,按下按鈕後視同已將規定看畢,事後不得已"不清楚"為由規避</button>
             </a>
-            
-            
 
         </div>
     </body>
