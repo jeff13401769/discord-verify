@@ -1,6 +1,6 @@
 ## 兔子國
 
-You can use the [editor on GitHub](https://github.com/jeff13401769/discord-verify/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+點擊 [此處](https://discord.gg/yZChWXB5GV) 以加入兔子國的一員.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
