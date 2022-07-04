@@ -26,11 +26,6 @@ Syntax highlighted code block
 [Link](url) and ![Image](src)
 ```
 
-let apiKey = '1be9a6884abd4c3ea143b59ca317c6b2';
-$.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
-  console.log(JSON.stringify(data, null, 2));
-});
-
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
 
