@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## 兔子國
 
 You can use the [editor on GitHub](https://github.com/jeff13401769/discord-verify/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
