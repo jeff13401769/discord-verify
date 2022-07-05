@@ -26,18 +26,28 @@
                     var id = document.getElementById("Discord_ID").value;
                     if(confirm("你確定要遞交申請嗎? 每個IP每小時只能遞交一次申請!")){
 
-                        var url = 'https://jeff13401769.github.io/discord-verify/finish';
+                        const url = 'https://jeff13401769.github.io/discord-verify/finish';
                         window.open(url, '_self');
                         const { MongoClient, ServerApiVersion } = require('mongodb');
                         const uri = "mongodb+srv://jade_rabbit1124:Qwer1234762@cluster0.d6s5t.mongodb.net/?retryWrites=true&w=majority";
-                        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+                        const client = new MongoClient(uri, { 
+                            useNewUrlParser: true, 
+                            useUnifiedTopology: true, 
+                            serverApi: ServerApiVersion.v1,
+                            tlsCAFile: `${__dirname}/certs/ca.pem`,
+                            tlsAllowInvalidHostnames: true
+                        });
                         client.connect(err => {
                         const collection = client.db("verify").collection("all");
-                        var user_ip = json.ip;
-                        var user_id = id;
-                        var seconds = new Date(year, month, day, hours, minutes, seconds, 0).getTime() / 1000;
-                        var time_stamp = seconds
-                        var user_info = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
+                        const user_ip = json.ip;
+                        const user_id = id;
+                        const seconds = new Date(year, month, day, hours, minutes, seconds, 0).getTime() / 1000;
+                        const time_stamp = seconds
+                        const user_info = {
+                            ip: user_ip,
+                            id: user_id,
+                            登入時間: time_stamp
+                        }
                         collection.insertOne(user_info);
                         // perform actions on the collection object
                         client.close();
