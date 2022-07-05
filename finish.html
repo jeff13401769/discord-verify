@@ -21,14 +21,13 @@
             <h2>驗證完畢!</h2>
             <h3>請稍後,機器人將在確認無誤後自動為您開通權限!</h3>
             <h3>可以將此網頁關閉了!</h3>
-            <button> 關閉網頁 </button>
+            <br>
+            <h1> 網頁將在10秒後自動關閉</h1>            
             <script>
-                document.querySelector('button').onclick = function() {
-                    window.setTimeout(function() {
-                    window.open('', '_self', '');
-                    window.close();
-                    }, 0);
-                  };
+            window.setTimeout(function() {
+                window.open('', '_self');
+                window.close();
+                }, 10000);
 
             </script>
 
