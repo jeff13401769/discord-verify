@@ -25,7 +25,8 @@
             <script>
                 document.querySelector('button').onclick = function() {
                     window.setTimeout(function() {
-                      window.close();
+                    var customWindow = window.open('', '_blank', '');
+                    customWindow.close();
                     }, 0);
                   };
 
