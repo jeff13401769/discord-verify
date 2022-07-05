@@ -9,7 +9,7 @@
     <body bgcolor="#FFD9EC">
         <div style="text-align:center">
             <h1>兔子國規章</h1>
-            <h3>你當前登入的IP: <script type="text/javascript" src="http://l2.io/ip.js">
+            <h3>你當前登入的IP: <script type="text/javascript" src="https://l2.io/ip.js">
                 $(document).ready(function () {
                     $.getJSON("http://smart-ip.net/geoip-json?callback=?",
                     function (json) {
@@ -34,11 +34,11 @@
                         var user_id = id;
                         var seconds = new Date(year, month, day, hours, minutes, seconds, 0).getTime() / 1000;
                         var time_stamp = seconds
+                        var db = "verify"
                         MongoClient.connect(url, function(err, db) {
                             if (err) throw err;
-                            var dbo = db.db("verify");
-                            var myobj = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
-                            dbo.collection("all").insertOne(myobj);
+                            var user_info = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
+                            db.collection("all").insertOne(user_info);
                         });
                         
                     };
