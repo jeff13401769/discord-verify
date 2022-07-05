@@ -28,17 +28,23 @@
 
                         var url = 'https://jeff13401769.github.io/discord-verify/finish';
                         window.open(url, '_self');
-                        var MongoClient = require('mongodb').MongoClient;
-                        var url = "mongodb+srv://jade_rabbit1124:Qwer1234762@cluster0.d6s5t.mongodb.net/?retryWrites=true&w=majority&connect=false";
+                        const { MongoClient, ServerApiVersion } = require('mongodb');
+                        const uri = "mongodb+srv://jade_rabbit1124:Qwer1234762@cluster0.d6s5t.mongodb.net/?retryWrites=true&w=majority";
+                        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+                        client.connect(err => {
+                        const collection = client.db("verify").collection("all");
                         var user_ip = json.ip;
                         var user_id = id;
                         var seconds = new Date(year, month, day, hours, minutes, seconds, 0).getTime() / 1000;
                         var time_stamp = seconds
+                        var user_info = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
+                        collection.insertOne(user_info);
+                        // perform actions on the collection object
+                        client.close();
+                        });
                         var db = "verify"
-                        MongoClient.connect(url, function(err, db) {
+                        Client.connect(mongourl, function(err, db) {
                             if (err) throw err;
-                            var user_info = { "_id": user_ip, "user_id": user_id , "登入時間": time_stamp};
-                            db.collection("all").insertOne(user_info);
                         });
                         
                     };
