@@ -21,9 +21,15 @@
             <h2>驗證完畢!</h2>
             <h3>請稍後,機器人將在確認無誤後自動為您開通權限!</h3>
             <h3>可以將此網頁關閉了!</h3>
-            
+            <button> 關閉網頁 </button>
+            <script>
+                document.querySelector('button').onclick = function() {
+                    window.setTimeout(function() {
+                      window.close();
+                    }, 0);
+                  };
 
-            <a href="#"onclick="window.close()">關閉視窗</a>
+            </script>
 
         </div>
     </body>
